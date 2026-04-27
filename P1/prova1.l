@@ -16,7 +16,6 @@ ID       [a-zA-Z][a-zA-Z0-9_]*
 TEXT     \"[^\"\n]*\"
 %%
 
-/* copiar E2 e fazer as extensões */
 [ \t\n]            // skip whitespace
 "//"[^\n]*         // skip comments
 
