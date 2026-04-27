@@ -44,9 +44,13 @@ stmt_list
 
 stmt
 : ID ASSIGN expr
-| PRINT LPAR exprlist RPAR
+| PRINT LPAR expr_list RPAR
 | expr
 ;
+
+expr_list
+: expr
+| expr_list COMMA expr
 
 expr
 : factor
@@ -62,7 +66,15 @@ factor
 
 term
 : NUM
+| STRING
+| ID
 | LPAR expr RPAR
+| func_call
+;
+
+func_call
+: LENGTH LPAR expr RPAR
+| CONCAT LPAR expr_list RPAR
 ;
 
 %%
